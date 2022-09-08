@@ -1,5 +1,6 @@
 import colors from 'colors';
 import { notFound, errorHandler } from './middleware/error.js';
+import brandRoute from './routes/brandRoute.js';
 import categoryRoute from './routes/categoryRoute.js';
 import productRoute from './routes/productRoute.js';
 import connectDB from './config/db.js';
@@ -19,6 +20,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/products', productRoute);
 app.use('/api/categories', categoryRoute);
+app.use('/api/brands', brandRoute); 
 
 app.use(notFound);
 
