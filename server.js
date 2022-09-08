@@ -1,5 +1,6 @@
 import colors from 'colors';
 import { notFound, errorHandler } from './middleware/error.js';
+import categoryRoute from './routes/categoryRoute.js';
 import productRoute from './routes/productRoute.js';
 import connectDB from './config/db.js';
 import dotenv from 'dotenv';
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/products', productRoute);
+app.use('/api/category', categoryRoute);
 
 app.use(notFound);
 
