@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/products', productRoute);
-app.use('/api/category', categoryRoute);
+app.use('/api/categories', categoryRoute);
 
 app.use(notFound);
 
