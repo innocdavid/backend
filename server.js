@@ -10,7 +10,7 @@ import  express from 'express';
 const app = express();
 dotenv.config()
 connectDB();
-dotenv.config()
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('API is running....');
