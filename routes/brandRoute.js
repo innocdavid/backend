@@ -24,7 +24,7 @@ router.get('/:id',
       res.json(brand);
     } else {
       res.status(404);
-      throw new Error('Category not found');
+      throw new Error('Brand not found');
     }
   })
 );

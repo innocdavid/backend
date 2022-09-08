@@ -4,8 +4,8 @@ import express from 'express';
 
 const router = express.Router();
 
-// @desc Fetch all products
-// @desc GET /api/products
+// @desc Fetch all catergories
+// @desc GET /api/categories
 // @acess public
 router.get('/',
   asyncHandler(async (req, res) => {
@@ -14,8 +14,8 @@ router.get('/',
   })
 );
 
-// @desc Fetch single product
-// @desc GET /api/products/:id
+// @desc Fetch single category
+// @desc GET /api/categories/:id
 // @acess public
 router.get('/:id', 
   asyncHandler(async (req, res) => { 
