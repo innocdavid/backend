@@ -6,6 +6,7 @@ import dealsRoute from './routes/dealsRoute.js';
 import brandRoute from './routes/brandRoute.js';
 import categoryRoute from './routes/categoryRoute.js';
 import productRoute from './routes/productRoute.js';
+import itemsRoute from './routes/itemsRoute.js';
 import connectDB from './config/db.js';
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -21,6 +22,7 @@ app.get('/', (req, res) => {
   res.send('API is running....');
 });
 
+app.use('/api/items', itemsRoute)
 app.use('/api/products', productRoute);
 app.use('/api/categories', categoryRoute);
 app.use('/api/brands', brandRoute); 
