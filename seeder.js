@@ -5,6 +5,7 @@ import users from './data/users.js';
 import products from './data/productsArray.js';
 import User from './models/user.js';
 import Deal from './models/deals.js';
+import Properties from './models/properties.js';
 import Order from './models/orders.js';
 import connectDB from './config/db.js';
 
@@ -14,7 +15,7 @@ connectDB();
 const importData = async () => {
   try {
     await Order.deleteMany();
-    await Deal.deleteMany();
+    await Properties.deleteMany();
     await User.deleteMany();
 
     const createdUsers = await User.insertMany(users);
@@ -25,7 +26,7 @@ const importData = async () => {
       return {...product, user: adminUser}
     });
 
-    await Deal.insertMany(sampleProducts);
+    await Properties.insertMany(sampleProducts);
 
     console.log('Data Imported: '.green.inverse.bold);
     process.exit();
@@ -40,7 +41,7 @@ const importData = async () => {
 const destroyData = async () => {
   try {
     await Order.deleteMany();
-    await Deal.deleteMany();
+    await Properties.deleteMany();
     await User.deleteMany();
     console.log('Data Destroyed: '.red.inverse.bold);
     process.exit();
